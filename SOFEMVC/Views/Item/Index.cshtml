@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>@ViewBag.Error</p>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Completed</th>
+        <th></th>
+    </tr>
+    @foreach (SOFEMVC.Models.SofeItem i in ViewBag.Items)
+    {
+        <tr>
+            <td>@i.title</td>
+            <td>@i.isCompleted</td>
+            <td><a href="/Item/Delete/@i._id">Delete</a></td>
+        </tr>
+    }
+</table>
